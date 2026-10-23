@@ -1,0 +1,31 @@
+{
+  "name": "wingo-intelligence",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "next build",
+    "start": "next start",
+    "collector": "dotenv -e .env.local -- tsx scripts/collector.ts",
+    "collector:prod": "tsx scripts/collector.ts",
+    "typecheck": "tsc --noEmit",
+    "research-test": "tsc --target ES2020 --module commonjs --moduleResolution node --strict --skipLibCheck --outDir .research-test lib/types.ts lib/analysis.ts lib/data-quality.ts scripts/research-test.ts && node .research-test/scripts/research-test.js",
+    "dev:next": "next dev"
+  },
+  "dependencies": {
+    "mongodb": "^6.12.0",
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.6",
+    "@types/react-dom": "^19.0.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "dotenv-cli": "^8.0.0"
+  }
+}
